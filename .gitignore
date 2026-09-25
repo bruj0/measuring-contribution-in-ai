@@ -1,0 +1,16 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local-only data
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# MkDocs build output
+/site/
+/_site/

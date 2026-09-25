@@ -1,0 +1,21 @@
+[project]
+name = "measuring-contribution-in-ai"
+version = "0.1.0"
+description = "Public essay: When AI Writes the Code, What Counts as Contribution?"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.50",
+    "pymdown-extensions>=10.14",
+    "mkdocs-panzoom-plugin>=0.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mermaid_fences"]
