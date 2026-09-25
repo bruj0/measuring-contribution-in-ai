@@ -1,0 +1,1302 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Evaluating engineering contribution in the age of generative AI.">
+      
+      
+      
+        <link rel="canonical" href="https://bruj0.github.io/measuring-contribution-in-ai/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>When AI Writes the Code, What Counts as Contribution?</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/panzoom.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <meta name="panzoom-theme" content="material">
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#when-ai-writes-the-code-what-counts-as-contribution" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="When AI Writes the Code, What Counts as Contribution?" class="md-header__button md-logo" aria-label="When AI Writes the Code, What Counts as Contribution?" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.5 15.5c0 1.11-.89 2-2 2s-2-.89-2-2 .9-2 2-2 2 .9 2 2m-9-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.89 2-2-.89-2-2-2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            When AI Writes the Code, What Counts as Contribution?
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Essay
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bruj0/measuring-contribution-in-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bruj0/measuring-contribution-in-ai
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="When AI Writes the Code, What Counts as Contribution?" class="md-nav__button md-logo" aria-label="When AI Writes the Code, What Counts as Contribution?" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.5 15.5c0 1.11-.89 2-2 2s-2-.89-2-2 .9-2 2-2 2 .9 2 2m-9-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.89 2-2-.89-2-2-2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2z"/></svg>
+
+    </a>
+    When AI Writes the Code, What Counts as Contribution?
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bruj0/measuring-contribution-in-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bruj0/measuring-contribution-in-ai
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essay
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-existed-before-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem existed before AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-activity-measures-can-and-cannot-tell-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What activity measures can, and cannot, tell us
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-smaller-implementation-can-represent-a-larger-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A smaller implementation can represent a larger contribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#four-dimensions-of-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Four dimensions of contribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Four dimensions of contribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-outcomes-what-improved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Outcomes: what improved?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-judgment-which-decisions-made-the-work-better" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Judgment: which decisions made the work better?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ownership-can-we-trust-and-maintain-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ownership: can we trust and maintain the result?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-team-contribution-who-became-more-effective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Team contribution: who became more effective?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-explanations-useful-not-ceremonial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make explanations useful, not ceremonial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-can-write-the-explanation-too-trust-but-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI can write the explanation too, trust but verify
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidence-over-credential-but-not-without-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence over credential, but not without context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-practical-framework-without-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A practical framework without a leaderboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safeguards-against-a-new-set-of-bad-incentives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safeguards against a new set of bad incentives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safeguards against a new set of bad incentives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-replace-code-volume-with-document-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do not replace code volume with document volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separate-a-teams-result-from-an-individuals-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separate a team's result from an individual's role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-not-reward-visibility-alone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do not reward visibility alone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#treat-prevention-claims-carefully" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treat prevention claims carefully
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-for-opportunity-and-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account for opportunity and constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allow-useful-failure-and-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allow useful failure and uncertainty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-the-administrative-cost-low" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keep the administrative cost low
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changes-in-a-performance-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changes in a performance conversation?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reward-the-contribution-not-its-packaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reward the contribution, not its packaging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About the author
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-existed-before-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem existed before AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-activity-measures-can-and-cannot-tell-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What activity measures can, and cannot, tell us
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-smaller-implementation-can-represent-a-larger-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A smaller implementation can represent a larger contribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#four-dimensions-of-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Four dimensions of contribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Four dimensions of contribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-outcomes-what-improved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Outcomes: what improved?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-judgment-which-decisions-made-the-work-better" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Judgment: which decisions made the work better?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ownership-can-we-trust-and-maintain-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ownership: can we trust and maintain the result?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-team-contribution-who-became-more-effective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Team contribution: who became more effective?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-explanations-useful-not-ceremonial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make explanations useful, not ceremonial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-can-write-the-explanation-too-trust-but-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI can write the explanation too, trust but verify
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidence-over-credential-but-not-without-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence over credential, but not without context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-practical-framework-without-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A practical framework without a leaderboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safeguards-against-a-new-set-of-bad-incentives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safeguards against a new set of bad incentives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safeguards against a new set of bad incentives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-replace-code-volume-with-document-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do not replace code volume with document volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separate-a-teams-result-from-an-individuals-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separate a team's result from an individual's role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-not-reward-visibility-alone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do not reward visibility alone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#treat-prevention-claims-carefully" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treat prevention claims carefully
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-for-opportunity-and-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account for opportunity and constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allow-useful-failure-and-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allow useful failure and uncertainty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-the-administrative-cost-low" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keep the administrative cost low
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changes-in-a-performance-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changes in a performance conversation?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reward-the-contribution-not-its-packaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reward the contribution, not its packaging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About the author
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="when-ai-writes-the-code-what-counts-as-contribution">When AI Writes the Code, What Counts as Contribution?<a class="headerlink" href="#when-ai-writes-the-code-what-counts-as-contribution" title="Permanent link">&para;</a></h1>
+<p><em>An argument for evaluating engineering through outcomes, judgment, ownership, and the ability to make others more effective.</em></p>
+<p><strong>The central argument: Evaluate engineers by the useful results they help create, the decisions behind those results, and the capability they leave with the team, not by how much code or documentation they produce.</strong></p>
+<p>If two engineers ship the same feature, but one produces ten times more code, who contributed more?</p>
+<p>The code cannot answer that question by its volume alone. Neither can the number of pull requests, tickets, or documents attached to it. We need to understand what changed for users, which decisions mattered, and whether the team can safely operate and adapt what it shipped.</p>
+<p>Generative AI makes an old measurement problem more urgent: how do we distinguish producing work from creating value?</p>
+<p>My answer is not to replace code counts with spec counts. It is to make valuable judgment easier to examine, connect it to results, and recognize the work that improves a team's ability to deliver those results again.</p>
+<p style="font-size: small; color: #6b7280; margin-top: 0.5em;">By Rodrigo A. Diaz Leven — <a href="https://www.linkedin.com/in/rodrigoleven/">LinkedIn</a> · <a href="https://github.com/bruj0">GitHub</a> · <a href="https://resume.bruj0.net/bruj0/rodrigo-leven">Resume</a></p>
+
+<h2 id="table-of-contents">Table of contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#the-problem-existed-before-ai">The problem existed before AI</a></li>
+<li><a href="#what-activity-measures-can-and-cannot-tell-us">What activity measures can, and cannot, tell us</a></li>
+<li><a href="#a-smaller-implementation-can-represent-a-larger-contribution">A smaller implementation can represent a larger contribution</a></li>
+<li><a href="#four-dimensions-of-contribution">Four dimensions of contribution</a><ul>
+<li><a href="#1-outcomes-what-improved">1. Outcomes: what improved?</a></li>
+<li><a href="#2-judgment-which-decisions-made-the-work-better">2. Judgment: which decisions made the work better?</a></li>
+<li><a href="#3-ownership-can-we-trust-and-maintain-the-result">3. Ownership: can we trust and maintain the result?</a></li>
+<li><a href="#4-team-contribution-who-became-more-effective">4. Team contribution: who became more effective?</a></li>
+</ul>
+</li>
+<li><a href="#make-explanations-useful-not-ceremonial">Make explanations useful, not ceremonial</a></li>
+<li><a href="#ai-can-write-the-explanation-too-trust-but-verify">AI can write the explanation too, trust but verify</a></li>
+<li><a href="#evidence-over-credential-but-not-without-context">Evidence over credential, but not without context</a></li>
+<li><a href="#a-practical-framework-without-a-leaderboard">A practical framework without a leaderboard</a></li>
+<li><a href="#safeguards-against-a-new-set-of-bad-incentives">Safeguards against a new set of bad incentives</a><ul>
+<li><a href="#do-not-replace-code-volume-with-document-volume">Do not replace code volume with document volume</a></li>
+<li><a href="#separate-a-teams-result-from-an-individuals-role">Separate a team's result from an individual's role</a></li>
+<li><a href="#do-not-reward-visibility-alone">Do not reward visibility alone</a></li>
+<li><a href="#treat-prevention-claims-carefully">Treat prevention claims carefully</a></li>
+<li><a href="#account-for-opportunity-and-constraints">Account for opportunity and constraints</a></li>
+<li><a href="#allow-useful-failure-and-uncertainty">Allow useful failure and uncertainty</a></li>
+<li><a href="#keep-the-administrative-cost-low">Keep the administrative cost low</a></li>
+</ul>
+</li>
+<li><a href="#what-changes-in-a-performance-conversation">What changes in a performance conversation?</a></li>
+<li><a href="#reward-the-contribution-not-its-packaging">Reward the contribution, not its packaging</a></li>
+</ul>
+<h2 id="the-problem-existed-before-ai">The problem existed before AI<a class="headerlink" href="#the-problem-existed-before-ai" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: AI makes an existing measurement problem more urgent. Producing work quickly is valuable only when that work solves a worthwhile problem responsibly.</strong></p>
+<p>Engineering activity and engineering contribution have never been the same thing. A large change can solve a small problem. A small change can remove a serious risk. A decision not to build can save more work than an impressive implementation creates.</p>
+<p>AI does not invalidate a previously perfect measurement system. It gives us another reason to stop treating visible activity as a reliable account of individual value.</p>
+<p>When an engineer uses AI to produce an implementation quickly, the hard questions remain. Was this the right problem? Were the requirements sound? Does the solution fit the surrounding system? Was it verified? Can someone maintain it after the original author moves on?</p>
+<p>This is not an argument against speed. Delivering a useful, reliable result sooner is valuable. But speed needs a destination and a quality threshold. Producing the wrong thing faster is not the contribution we should reward.</p>
+<p>Nor should this discussion begin with a threat about replacement. A useful contribution framework should help people understand expectations, improve their practice, and receive credit for valuable work. It should not turn AI adoption into a contest over who can generate the most output with the fewest colleagues.</p>
+<h2 id="what-activity-measures-can-and-cannot-tell-us">What activity measures can, and cannot, tell us<a class="headerlink" href="#what-activity-measures-can-and-cannot-tell-us" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: Activity metrics can help identify delays, bottlenecks, and repeated work, but they do not show the value an engineer created. Counting specifications instead of lines of code still measures the amount produced, not whether it solved a worthwhile problem.</strong></p>
+<p>Lines of code, pull requests, tickets, story points, and hours describe aspects of activity. The mistake is treating them as interchangeable with contribution.</p>
+<table>
+<thead>
+<tr>
+<th>Activity measure</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lines of code</td>
+<td>Whether the change was necessary, correct, or simpler than the alternatives</td>
+</tr>
+<tr>
+<td>Pull requests merged</td>
+<td>Whether the work improved a product or reduced a meaningful risk</td>
+</tr>
+<tr>
+<td>Tickets closed</td>
+<td>Whether the underlying problem was solved and stayed solved</td>
+</tr>
+<tr>
+<td>Story points completed</td>
+<td>Whether the result justified the effort or improved an outcome</td>
+</tr>
+<tr>
+<td>Hours worked</td>
+<td>Whether the time produced value, learning, or avoidable rework</td>
+</tr>
+<tr>
+<td>Specs and research documents written</td>
+<td>Whether the reasoning was accurate or changed a decision</td>
+</tr>
+</tbody>
+</table>
+<p>These measures need not disappear. A team can examine delivery patterns to ask where work waits, where tasks are too large, or where rework occurs. That is different from ranking individuals by their counts.</p>
+<p>The distinction matters especially when we introduce new practices. If we stop counting pull requests and start counting specifications, we have changed the object, not the measurement problem.</p>
+<p><strong>An artifact is evidence to examine, not a unit of contribution to accumulate.</strong></p>
+<h2 id="a-smaller-implementation-can-represent-a-larger-contribution">A smaller implementation can represent a larger contribution<a class="headerlink" href="#a-smaller-implementation-can-represent-a-larger-contribution" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: Credit the investigation and decisions that solve the problem, including the decision to build less. Neither a large nor a small deliverable proves value on its own.</strong></p>
+<p>Consider an illustrative scenario, not an account of a particular employer or project.</p>
+<p>A team is asked to reduce failures in a background processing service. One engineer proposes a replacement service and uses an AI assistant to produce much of the implementation. The work looks substantial: new components, tests, configuration, and documentation.</p>
+<p>Another engineer first investigates the failures. They discover that the recurring problem involves duplicate messages and a missing idempotency check. They propose a smaller change, test the duplicate-message behavior, define a safe rollout, and explain which failure modes the change does not address.</p>
+<p>Suppose the smaller change meets the agreed reliability goal without adding another service to operate. In that case, the valuable contribution is not the amount of code produced. It is the investigation, the decision to narrow the solution, and the verification that the smaller intervention worked.</p>
+<p>The larger implementation was not necessarily careless. A replacement might have been justified by other requirements. That is precisely why contribution cannot be inferred from the size of either deliverable. We need the context, the reasoning, and the result.</p>
+<p>The same test should apply to written work. A lengthy design document that changes nothing is not automatically more valuable than a short review that exposes a false assumption.</p>
+<h2 id="four-dimensions-of-contribution">Four dimensions of contribution<a class="headerlink" href="#four-dimensions-of-contribution" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: Examine contribution through four distinct questions: what improved, which decisions mattered, whether the result is dependable, and who became more effective. No single dimension tells the whole story.</strong></p>
+<p>I propose four dimensions: outcomes, judgment, ownership, and team contribution. They are prompts for an evidence-based conversation, not a universal scoring formula.</p>
+<h3 id="1-outcomes-what-improved">1. Outcomes: what improved?<a class="headerlink" href="#1-outcomes-what-improved" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Connect the work to a worthwhile change and show the evidence. Separate observed results from expected benefits, and do not confuse an unsuccessful outcome with a poor decision.</strong></p>
+<p>Start with the problem the work was meant to solve.</p>
+<p>Did users complete a task more reliably? Did a recurring operational burden decrease? Did a team make a decision with less uncertainty? Did a necessary control become verifiable? Did an experiment provide enough evidence to stop an unpromising investment?</p>
+<p>The point is not to force every change into a revenue figure. It is to explain the relationship between the work and a worthwhile result.</p>
+<p>Before substantial work begins, agree on the intended outcome and what would count as credible evidence. After delivery, revisit that expectation. Distinguish what was observed from what is still a prediction.</p>
+<p>Useful questions include:</p>
+<ul>
+<li>What problem did we agree to solve, and for whom?</li>
+<li>What changed relative to the starting point?</li>
+<li>What evidence supports that conclusion?</li>
+<li>Which costs or trade-offs accompanied the improvement?</li>
+<li>What remains unknown?</li>
+</ul>
+<p>Not all outcomes arrive within a review period. Foundational work, maintenance, and research may need intermediate evidence. A migration rehearsal, a verified restore procedure, or a tested hypothesis can demonstrate progress without pretending the final benefit has already occurred.</p>
+<p>Outcomes also need context. A sound experiment can produce a negative result. A good decision can encounter an external constraint. Evaluate the result and the quality of the decision separately rather than assuming one proves the other.</p>
+<h3 id="2-judgment-which-decisions-made-the-work-better">2. Judgment: which decisions made the work better?<a class="headerlink" href="#2-judgment-which-decisions-made-the-work-better" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Assess how an engineer tested assumptions, chose among alternatives, and handled uncertainty, not whether they personally typed every line or memorized every dependency.</strong></p>
+<p>Judgment is visible in the choices that shape a result: defining the problem, testing assumptions, comparing alternatives, understanding dependencies, and deciding what not to build.</p>
+<p>AI-assisted implementation does not remove the need for those choices. The proposed standard is not that an engineer must type every line. It is that they remain accountable for the decisions they accept and the claims they make about the result.</p>
+<p>Useful evidence includes:</p>
+<ul>
+<li>An investigation that corrected the team's understanding of a failure.</li>
+<li>A review that identified a dependency before a risky change.</li>
+<li>A simpler design chosen after examining alternatives.</li>
+<li>A decision to stop work because the expected benefit no longer justified it.</li>
+<li>A test or experiment that challenged an attractive but unsupported assumption.</li>
+</ul>
+<p>Research and specifications can make this reasoning visible. Their value depends on their accuracy and usefulness, not their length or format.</p>
+<p>Understanding also has practical boundaries. No engineer can explain every detail of every dependency. The relevant question is whether they understand enough to make the change responsibly, identify where their knowledge ends, and obtain help when needed.</p>
+<p>Comprehension is not a memory test. It is the ability to use evidence to reason about behavior, consequences, and uncertainty.</p>
+<h3 id="3-ownership-can-we-trust-and-maintain-the-result">3. Ownership: can we trust and maintain the result?<a class="headerlink" href="#3-ownership-can-we-trust-and-maintain-the-result" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Delivery includes verification, safe operation, and maintainability, not just merging code. Expect care proportional to the risk, and treat seeking help as part of responsible ownership.</strong></p>
+<p>A contribution does not end when a change is merged.</p>
+<p>Ownership means verifying the important claims, considering failure and recovery, checking the result after release, and leaving the work in a state the team can maintain.</p>
+<p>This is where understanding becomes practical. Can the engineer investigate unexpected behavior? Can they connect a failure to a design assumption? Can another person identify how to deploy, observe, or reverse the change?</p>
+<p>Evidence might include appropriate tests, a rollout plan, observed production behavior, corrected assumptions, or a useful handover. The exact evidence should follow the risk.</p>
+<p>A small copy change does not need an architectural review. A change to payment processing or access control deserves more scrutiny. Requiring the same package for both would reward procedure rather than judgment.</p>
+<p>Ownership should not mean solitary heroics. Asking for a specialist review or involving colleagues in diagnosis can be responsible behavior. The aim is dependable work, not an engineer who never needs help.</p>
+<h3 id="4-team-contribution-who-became-more-effective">4. Team contribution: who became more effective?<a class="headerlink" href="#4-team-contribution-who-became-more-effective" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Recognize work that helps others perform better. Judge reviews, mentoring, tools, and reusable assets by their usefulness to colleagues, not their visibility or quantity.</strong></p>
+<p>Some of the most useful work changes what other people can do.</p>
+<p>A careful review can improve a colleague's design. A clear explanation can make an unfamiliar system accessible. A maintained tool can remove repeated work. Pairing can help someone develop the judgment to handle the next problem independently.</p>
+<p>This contribution should not be reduced to public visibility. The most vocal person is not necessarily the most helpful, and not every useful interaction produces a document.</p>
+<p>Ask instead:</p>
+<ul>
+<li>Who used the work, and what did it help them do?</li>
+<li>Which dependency or uncertainty did it remove?</li>
+<li>Did a reusable tool reduce work after accounting for its maintenance cost?</li>
+<li>Can someone else now perform a task they previously could not?</li>
+</ul>
+<p>Reusable assets deserve credit when reuse is justified. Not every novel problem needs a framework, template, or agent instruction. Sometimes the better contribution is a small, local solution that avoids imposing an abstraction on everyone else.</p>
+<h2 id="make-explanations-useful-not-ceremonial">Make explanations useful, not ceremonial<a class="headerlink" href="#make-explanations-useful-not-ceremonial" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: An explanation should help others understand the problem, the choices, the risks, and the learning. Use only as much documentation as the work needs, and keep it aligned with what actually happened.</strong></p>
+<p>If judgment matters, we need a way to inspect it. An explanation delivered with meaningful work can help.</p>
+<p>For a non-trivial change, four questions provide a useful starting point:</p>
+<ol>
+<li><strong>What is this?</strong> What problem does it solve, and what is outside its scope?</li>
+<li><strong>Why this approach?</strong> Which alternatives were considered, and which trade-offs mattered?</li>
+<li><strong>What could fail?</strong> Which assumptions, dependencies, and failure modes deserve attention?</li>
+<li><strong>What did we learn?</strong> What did investigation, testing, or operation reveal, and what remains unknown?</li>
+</ol>
+<p>These answers can live in a pull request, a design note, an issue, an architectural decision record, or a more formal request for comments. A particular document type is not the point.</p>
+<p>For a larger design, explaining the alternatives can be as useful as explaining the chosen solution. For a smaller change, a few precise sentences may be enough. Update the relevant explanation when implementation or verification changes the reasoning; do not preserve an outdated plan simply because it was approved first.</p>
+<p>The questions also apply at different stages. Before implementation, distinguish findings from assumptions and open questions. After verification, record what the evidence actually showed. A promise to investigate is not yet a lesson learned.</p>
+<p><strong>This is not a demand for more paperwork. Evidence should be proportional to the risk and complexity of the work.</strong></p>
+<h2 id="ai-can-write-the-explanation-too-trust-but-verify">AI can write the explanation too, trust but verify<a class="headerlink" href="#ai-can-write-the-explanation-too-trust-but-verify" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: A convincing explanation is not proof of understanding, regardless of who wrote it. Build trust by checking it against the implementation, tests, and practical use.</strong></p>
+<p>A serious framework must face this objection directly: the code and its explanation can both be AI-assisted. A polished document does not, by itself, establish that a person understands the system.</p>
+<p>Shipping the explanation beside the code makes the reasoning available for review. It does not make that reasoning true.</p>
+<p>The test is whether the explanation matches the implementation, survives relevant questions, and helps someone act safely. Does a claimed guarantee have a corresponding verification? If an assumption changes, can the engineer explain the consequence? If the observed behavior contradicts the design, do they investigate and revise their understanding?</p>
+<p>This is not an invitation to turn every review into an oral examination. Use the ordinary work of engineering: discuss a trade-off, inspect a test, walk through a failure mode, or ask a colleague to use the handover information.</p>
+<p>An AI-assisted explanation can be useful. An entirely human-written explanation can be wrong. Authorship alone should settle neither question.</p>
+<p>The artifact makes reasoning inspectable. Review, verification, and use provide reasons to trust it.</p>
+<h2 id="evidence-over-credential-but-not-without-context">Evidence over credential, but not without context<a class="headerlink" href="#evidence-over-credential-but-not-without-context" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: Examine concrete work and the person's role in it rather than relying on titles or tenure alone. Respect sustained experience and confidentiality; a public portfolio is not a requirement for proving capability.</strong></p>
+<p>Degrees, titles, and years of experience describe parts of a person's background. They should not substitute for examining what someone can do in a particular context.</p>
+<p>For contribution discussions, a concrete account is more useful than a label: this was the problem, these were the constraints, this was the person's role, these decisions mattered, and this is what happened.</p>
+<p>That does not mean experience has become irrelevant or that a burst of visible output replaces sustained responsibility. Maintaining a system through changing requirements can demonstrate something that an initial delivery cannot.</p>
+<p>Nor should this become a demand for public portfolios. Many engineers cannot share their work outside their employer. Internal evidence, a clear account of decisions, and appropriately anonymized examples can support a conversation without exposing confidential material.</p>
+<p>The aim is to examine capability in context, not replace one status signal with another.</p>
+<h2 id="a-practical-framework-without-a-leaderboard">A practical framework without a leaderboard<a class="headerlink" href="#a-practical-framework-without-a-leaderboard" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: Use the framework to discuss patterns across representative work, with expectations matched to role and context. It is a guide for inquiry, not a numerical ranking or a verdict based on one task.</strong></p>
+<p>The four dimensions can guide expectations at different levels without becoming a points system.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>A reason to investigate</th>
+<th>Evidence of dependable contribution</th>
+<th>Evidence of broader contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Outcomes</td>
+<td>Completion is reported without checking whether the problem was solved</td>
+<td>The intended result is clear, and evidence and limitations are reported</td>
+<td>The work improves an important result across a wider area or helps others select better priorities</td>
+</tr>
+<tr>
+<td>Judgment</td>
+<td>Important assumptions go untested, or choices cannot be explained</td>
+<td>Alternatives, dependencies, and relevant risks inform the approach</td>
+<td>Decisions reveal non-obvious risks, avoid unnecessary work, or improve others' plans</td>
+</tr>
+<tr>
+<td>Ownership</td>
+<td>Verification or follow-through is missing relative to the risk</td>
+<td>The result is appropriately tested, observed, and maintainable</td>
+<td>The work improves how the team verifies, operates, or recovers related systems</td>
+</tr>
+<tr>
+<td>Team contribution</td>
+<td>Avoidable knowledge gaps or dependencies remain unaddressed</td>
+<td>Reviews, collaboration, and handovers help others work effectively</td>
+<td>Colleagues gain lasting capability or repeated work becomes demonstrably easier</td>
+</tr>
+</tbody>
+</table>
+<p>A single observation is a prompt for inquiry, not a verdict. Someone may lack access, time, support, or a clear assignment. A junior engineer and a staff engineer should not face identical expectations of scope and independence.</p>
+<p>Likewise, not every project needs to demonstrate all four dimensions equally. An incident response, an exploratory prototype, and a long-term infrastructure change have different purposes.</p>
+<p>I would use this framework to examine representative work over time, rather than score every task or collapse the dimensions into a numerical ranking.</p>
+<h2 id="safeguards-against-a-new-set-of-bad-incentives">Safeguards against a new set of bad incentives<a class="headerlink" href="#safeguards-against-a-new-set-of-bad-incentives" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: Better categories do not automatically produce fair evaluation. Explicitly guard against paperwork quotas, credit capture, visibility bias, unsupported claims, and unequal opportunities.</strong></p>
+<p>A framework can fail even when its categories sound sensible. These safeguards belong in the design, not in a footnote.</p>
+<h3 id="do-not-replace-code-volume-with-document-volume">Do not replace code volume with document volume<a class="headerlink" href="#do-not-replace-code-volume-with-document-volume" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Reward what a document helped clarify or improve, not the fact that it was written.</strong></p>
+<p>Ask what the explanation clarified or changed. Do not set quotas for specifications, research notes, or reusable assets.</p>
+<h3 id="separate-a-teams-result-from-an-individuals-role">Separate a team's result from an individual's role<a class="headerlink" href="#separate-a-teams-result-from-an-individuals-role" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Recognize the shared outcome while identifying each person's actual contribution; do not give everyone, or just the presenter, credit for the whole result.</strong></p>
+<p>Describe who investigated, implemented, reviewed, tested, operated, and enabled the work. Recognize shared results without assigning each contributor the entire outcome, or giving all credit to the person who presented it.</p>
+<h3 id="do-not-reward-visibility-alone">Do not reward visibility alone<a class="headerlink" href="#do-not-reward-visibility-alone" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Look for valuable work beyond what is publicly presented, including maintenance, support, and careful review.</strong></p>
+<p>Seek evidence from collaborators and from the work itself. Include maintenance, support, review, and quiet problem-solving, not just launches and presentations.</p>
+<h3 id="treat-prevention-claims-carefully">Treat prevention claims carefully<a class="headerlink" href="#treat-prevention-claims-carefully" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Credit evidence-backed risk reduction without claiming certainty about incidents or costs that never occurred.</strong></p>
+<p>We cannot observe an incident that never happened. Record the risk, the evidence that made it credible, and the action taken. A demonstrated failure in a test is stronger evidence than a claim to have prevented an unspecified future outage. Avoid invented savings or incident counts.</p>
+<h3 id="account-for-opportunity-and-constraints">Account for opportunity and constraints<a class="headerlink" href="#account-for-opportunity-and-constraints" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Evaluate what people did with the opportunities and support available to them, not just how prominent their assignments were.</strong></p>
+<p>People differ in project access, assignment scope, and available support. Evaluate decisions within those conditions rather than rewarding only people assigned prominent work.</p>
+<h3 id="allow-useful-failure-and-uncertainty">Allow useful failure and uncertainty<a class="headerlink" href="#allow-useful-failure-and-uncertainty" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Credit sound experiments and honest learning even when an approach fails. Judge decisions using the information available at the time, not hindsight alone.</strong></p>
+<p>An honest experiment that rules out an approach can contribute more than a confident success story with weak evidence. Distinguish reasonable decisions under uncertainty from careless execution.</p>
+<h3 id="keep-the-administrative-cost-low">Keep the administrative cost low<a class="headerlink" href="#keep-the-administrative-cost-low" title="Permanent link">&para;</a></h3>
+<p><strong>Key takeaway: Evaluate contribution using evidence from normal engineering work rather than creating a separate job of proving productivity.</strong></p>
+<p>Use evidence already produced by useful engineering work wherever possible. If people spend more time assembling proof than improving the system, the framework needs adjustment.</p>
+<h2 id="what-changes-in-a-performance-conversation">What changes in a performance conversation?<a class="headerlink" href="#what-changes-in-a-performance-conversation" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: Replace activity totals with a few concrete accounts of the problem, the person's role, a consequential decision, and the evidence of its result. Test and refine the approach before using it for high-stakes decisions.</strong></p>
+<p>The conversation should move from activity totals to a few concrete examples.</p>
+<table>
+<thead>
+<tr>
+<th>Instead of asking only…</th>
+<th>Ask…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How many pull requests did you merge?</td>
+<td>Which changes solved an important problem, and what evidence shows that?</td>
+</tr>
+<tr>
+<td>How many specifications did you write?</td>
+<td>Which decision improved because you clarified the problem?</td>
+</tr>
+<tr>
+<td>How fast did you deliver?</td>
+<td>Did the result arrive when needed, with appropriate quality and follow-through?</td>
+</tr>
+<tr>
+<td>How many tools or templates did you create?</td>
+<td>What repeated work became easier, for whom, and at what maintenance cost?</td>
+</tr>
+<tr>
+<td>How many incidents did you prevent?</td>
+<td>Which credible risks did you identify, and how did that change the work?</td>
+</tr>
+<tr>
+<td>What did you build yourself?</td>
+<td>What was your role in the shared result, and whom did you help?</td>
+</tr>
+</tbody>
+</table>
+<p>An engineer should be able to bring a small set of examples: the problem, their role, a consequential decision, evidence of the result, and remaining uncertainty. Colleagues can add context that the individual might miss.</p>
+<p>For a team trying this approach, I would start with a few completed pieces of work. Discuss where the framework reveals overlooked contribution and where it demands evidence the team does not yet collect. Adjust expectations before attaching high-stakes consequences to the exercise.</p>
+<p>The framework should make conversations more accurate and useful, not merely more elaborate.</p>
+<h2 id="reward-the-contribution-not-its-packaging">Reward the contribution, not its packaging<a class="headerlink" href="#reward-the-contribution-not-its-packaging" title="Permanent link">&para;</a></h2>
+<p><strong>Key takeaway: The final test is what the work changed, not how impressive the deliverable looks. Reward useful outcomes, responsible judgment, dependable systems, and stronger teams.</strong></p>
+<p>Engineering contribution can take the form of code, a decision, an investigation, a review, a useful explanation, or the removal of unnecessary work. None is valuable merely because it exists.</p>
+<p>The question is what it changed.</p>
+<p>Did someone solve a worthwhile problem? Did their judgment improve the approach? Can the team trust and maintain the result? Are other people now better equipped to do good work?</p>
+<p>Those questions leave room for speed, technical depth, collaboration, and learning without pretending that one count can represent them all.</p>
+<p>When AI helps produce the implementation, the standard should not become more output or more paperwork. It should become clearer evidence of responsible decisions and useful results.</p>
+<p><strong>Measuring contribution correctly means rewarding the judgment and outcomes, not the output volume.</strong></p>
+<hr />
+<h2 id="about-the-author">About the author<a class="headerlink" href="#about-the-author" title="Permanent link">&para;</a></h2>
+<p><strong>Rodrigo A. Diaz Leven</strong> is a platform engineering lead focused on AI-assisted engineering, evaluation, and developer tooling.</p>
+<p>If this essay sparked a question, disagreement, or an example from your own team, he would like to hear it:</p>
+<ul>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/rodrigoleven/">https://www.linkedin.com/in/rodrigoleven/</a></li>
+<li>GitHub: <a href="https://github.com/bruj0">https://github.com/bruj0</a></li>
+<li>Resume: <a href="https://resume.bruj0.net/bruj0/rodrigo-leven">https://resume.bruj0.net/bruj0/rodrigo-leven</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="assets/javascripts/panzoom.min.js"></script>
+      
+        <script src="assets/javascripts/zoompan.js"></script>
+      
+    
+  </body>
+</html>
