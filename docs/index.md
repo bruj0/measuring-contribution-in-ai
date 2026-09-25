@@ -12,6 +12,8 @@ Generative AI makes an old measurement problem more urgent: how do we distinguis
 
 My answer is not to replace code counts with spec counts. It is to make valuable judgment easier to examine, connect it to results, and recognize the work that improves a team's ability to deliver those results again.
 
+<p style="font-size: small; color: #6b7280; margin-top: 0.5em;">By Rodrigo A. Diaz Leven — <a href="https://www.linkedin.com/in/rodrigoleven/">LinkedIn</a> · <a href="https://github.com/bruj0">GitHub</a> · <a href="https://resume.bruj0.net/bruj0/rodrigo-leven">Resume</a></p>
+
 ## Table of contents
 
 - [The problem existed before AI](#the-problem-existed-before-ai)
@@ -329,3 +331,15 @@ Those questions leave room for speed, technical depth, collaboration, and learni
 When AI helps produce the implementation, the standard should not become more output or more paperwork. It should become clearer evidence of responsible decisions and useful results.
 
 **Measuring contribution correctly means rewarding the judgment and outcomes, not the output volume.**
+
+---
+
+## About the author
+
+**Rodrigo A. Diaz Leven** is a platform engineering lead focused on AI-assisted engineering, evaluation, and developer tooling.
+
+If this essay sparked a question, disagreement, or an example from your own team, he would like to hear it:
+
+- LinkedIn: <https://www.linkedin.com/in/rodrigoleven/>
+- GitHub: <https://github.com/bruj0>
+- Resume: <https://resume.bruj0.net/bruj0/rodrigo-leven>
